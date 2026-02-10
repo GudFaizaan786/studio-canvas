@@ -7,11 +7,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <span className="text-2xl font-display font-bold text-foreground">
-              Folio<span className="text-secondary">.</span>
+              GS<span className="text-secondary">origins</span>
             </span>
             <p className="text-sm text-muted-foreground mt-3 max-w-sm">
-              We craft digital experiences that blend creativity with technology. Let's build
-              something remarkable together.
+              Your origin point for Green Sustainable living — exploring Health, Technology,
+              Motivation & Lifestyle for a better tomorrow.
             </p>
             <div className="flex gap-4 mt-5">
               {[Github, Twitter, Linkedin, Mail].map((Icon, i) => (
@@ -44,7 +44,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4">Contact</h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <span>hello@folio.studio</span>
+              <span>hello@gsorigins.com</span>
               <span>+1 (555) 123-4567</span>
               <span>San Francisco, CA</span>
             </div>
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-10 pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Folio. All rights reserved.
+          © {new Date().getFullYear()} GSorigins. All rights reserved.
         </div>
       </div>
     </footer>

@@ -27,23 +27,23 @@ const HeroSection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
-            Creative Portfolio
+            Green Sustainable • Health • Technology • Motivation • Lifestyle
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            We Build{" "}
-            <span className="text-gradient">Digital Experiences</span>{" "}
-            That Matter
+            Live{" "}
+            <span className="text-gradient">Green & Sustainable</span>{" "}
+            Every Day
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-            Crafting stunning websites, apps, and digital products with a blend of creativity and
-            cutting-edge technology. Let's bring your vision to life.
+            Empowering you with insights on sustainable health, cutting-edge green technology,
+            daily motivation, and a mindful lifestyle. Start your journey with GSorigins.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="gap-2">
-              Get Started <ArrowRight size={18} />
+              Explore Now <ArrowRight size={18} />
             </Button>
             <Button variant="outline" size="lg">
-              View Our Work
+              Our Mission
             </Button>
           </div>
         </motion.div>

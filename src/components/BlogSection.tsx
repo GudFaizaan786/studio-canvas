@@ -21,27 +21,27 @@ type BlogPost = {
 const defaultPosts: BlogPost[] = [
   {
     id: 1,
-    title: "The Future of Web Design in 2026",
-    excerpt: "Exploring emerging trends, from AI-driven interfaces to immersive 3D experiences.",
+    title: "5 Green Tech Innovations Changing the World in 2026",
+    excerpt: "From solar-powered gadgets to AI-driven energy optimization — how green technology is reshaping our future.",
     date: "Feb 5, 2026",
     readTime: "5 min",
-    category: "Design",
+    category: "Technology",
   },
   {
     id: 2,
-    title: "Building Accessible Components",
-    excerpt: "A practical guide to creating inclusive digital experiences for everyone.",
+    title: "Building a Sustainable Morning Routine for Better Health",
+    excerpt: "Simple, eco-friendly health habits that boost your energy and reduce your carbon footprint.",
     date: "Jan 28, 2026",
     readTime: "8 min",
-    category: "Development",
+    category: "Health",
   },
   {
     id: 3,
-    title: "From Idea to Launch in 48 Hours",
-    excerpt: "How our team shipped a complete product in a weekend hackathon sprint.",
+    title: "Stay Motivated: The Power of Purpose-Driven Living",
+    excerpt: "How aligning your daily actions with sustainability goals fuels lasting motivation and fulfillment.",
     date: "Jan 15, 2026",
     readTime: "4 min",
-    category: "Case Study",
+    category: "Motivation",
   },
 ];
 
@@ -85,10 +85,10 @@ const BlogSection = () => {
         >
           <div>
             <span className="text-sm font-medium text-secondary uppercase tracking-widest">
-              Our Blog
+              GS Blog
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
-              Insights & Stories
+              Green Living Insights
             </h2>
           </div>
           <Button onClick={() => setShowEditor(!showEditor)} className="gap-2">

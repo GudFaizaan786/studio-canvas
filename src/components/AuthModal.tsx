@@ -66,7 +66,7 @@ const AuthModal = ({ mode, onClose, onSwitch }: AuthModalProps) => {
             <p className="text-sm text-muted-foreground mb-6">
               {mode === "login"
                 ? "Enter your credentials to access your account"
-                : "Sign up to get started with Folio"}
+                : "Sign up to join the GSorigins community"}
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
