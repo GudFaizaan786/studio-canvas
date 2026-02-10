@@ -3,10 +3,10 @@ import { Users, Target, Lightbulb, Award } from "lucide-react";
 import aboutTeam from "@/assets/about-team.png";
 
 const stats = [
-  { icon: Users, label: "Team Members", value: "50+" },
-  { icon: Target, label: "Projects Done", value: "200+" },
-  { icon: Lightbulb, label: "Ideas Shipped", value: "500+" },
-  { icon: Award, label: "Awards Won", value: "30+" },
+  { icon: Users, label: "Community Members", value: "10K+" },
+  { icon: Target, label: "Articles Published", value: "500+" },
+  { icon: Lightbulb, label: "Green Ideas Shared", value: "1K+" },
+  { icon: Award, label: "Lives Impacted", value: "50K+" },
 ];
 
 const AboutSection = () => {
@@ -21,14 +21,14 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-secondary uppercase tracking-widest">
-            About Us
+            About GSorigins
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
-            Passionate Creators & Innovators
+            Rooted in Sustainability, Growing with Purpose
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We're a team of designers, developers, and strategists who love turning complex problems
-            into simple, beautiful, and intuitive digital solutions.
+            We're a passionate community of health enthusiasts, tech innovators, and lifestyle advocates
+            dedicated to promoting green, sustainable living through knowledge and inspiration.
           </p>
         </motion.div>
 
@@ -50,12 +50,12 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold mb-4">
-              Driven by Curiosity, Powered by Design
+              GS HTML — Our Core Pillars
             </h3>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Since 2018, we've been helping startups and enterprises build remarkable digital
-              products. Our approach blends research, strategy, and bold design to deliver
-              experiences that truly connect with users.
+              <strong>G</strong>reen <strong>S</strong>ustainable — <strong>H</strong>ealth, <strong>T</strong>echnology, <strong>M</strong>otivation, <strong>L</strong>ifestyle.
+              Since 2022, we've been empowering people to make sustainable choices through evidence-based
+              health tips, green tech innovations, motivational content, and mindful lifestyle guides.
             </p>
 
             <div className="grid grid-cols-2 gap-6">

@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Blog", href: "#blog" },
 ];
 
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "signup" | null>(null);
@@ -26,7 +27,7 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <a href="#home" className="text-2xl font-display font-bold text-foreground tracking-tight">
-            Folio<span className="text-secondary">.</span>
+            GS<span className="text-secondary">origins</span>
           </a>
 
           {/* Desktop nav */}

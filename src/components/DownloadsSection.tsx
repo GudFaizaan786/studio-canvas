@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import downloadsIllustration from "@/assets/downloads-illustration.png";
 
 const downloads = [
-  { icon: FileText, name: "Brand Guidelines", size: "2.4 MB", type: "PDF" },
-  { icon: Image, name: "UI Kit & Assets", size: "18 MB", type: "ZIP" },
-  { icon: Code, name: "Component Library", size: "5.1 MB", type: "ZIP" },
-  { icon: Film, name: "Motion Templates", size: "32 MB", type: "ZIP" },
+  { icon: FileText, name: "Sustainable Living Guide", size: "3.2 MB", type: "PDF" },
+  { icon: Image, name: "Green Tech Infographics", size: "12 MB", type: "ZIP" },
+  { icon: Code, name: "Eco Habit Tracker Template", size: "1.8 MB", type: "ZIP" },
+  { icon: Film, name: "Motivation Video Pack", size: "45 MB", type: "ZIP" },
 ];
 
 const DownloadsSection = () => {
@@ -25,11 +25,11 @@ const DownloadsSection = () => {
               Downloads
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
-              Free Resources & Assets
+              Free Green Living Resources
             </h2>
             <p className="text-muted-foreground mb-8">
-              Grab our curated collection of design assets, templates, and tools to accelerate your
-              next project.
+              Download our curated guides, trackers, and toolkits to kickstart your sustainable
+              health & lifestyle journey.
             </p>
 
             <div className="flex flex-col gap-4">

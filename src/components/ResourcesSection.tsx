@@ -14,12 +14,12 @@ type Resource = {
 };
 
 const defaultResources: Resource[] = [
-  { id: 1, title: "Design Thinking Guide", url: "#", category: "Article", icon: BookOpen },
-  { id: 2, title: "UI Animation Masterclass", url: "#", category: "Video", icon: Video },
-  { id: 3, title: "The Design Podcast", url: "#", category: "Podcast", icon: Headphones },
-  { id: 4, title: "Figma Plugin Collection", url: "#", category: "Tool", icon: Wrench },
-  { id: 5, title: "Accessibility Handbook", url: "#", category: "Article", icon: BookOpen },
-  { id: 6, title: "CSS Grid Deep Dive", url: "#", category: "Video", icon: Video },
+  { id: 1, title: "Plant-Based Nutrition 101", url: "#", category: "Article", icon: BookOpen },
+  { id: 2, title: "Solar Energy for Beginners", url: "#", category: "Video", icon: Video },
+  { id: 3, title: "The Green Motivation Podcast", url: "#", category: "Podcast", icon: Headphones },
+  { id: 4, title: "Carbon Footprint Calculator", url: "#", category: "Tool", icon: Wrench },
+  { id: 5, title: "Mental Wellness & Eco-Anxiety Guide", url: "#", category: "Article", icon: BookOpen },
+  { id: 6, title: "Smart Home Green Tech Setup", url: "#", category: "Video", icon: Video },
 ];
 
 const categoryIcons: Record<string, typeof BookOpen> = {
@@ -70,7 +70,7 @@ const ResourcesSection = () => {
               Resources
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
-              Curated Knowledge Hub
+              Sustainable Knowledge Hub
             </h2>
           </div>
           <Button onClick={() => setShowAdd(!showAdd)} className="gap-2">
