@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-24">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <span className="text-2xl font-display font-bold text-foreground">
-              GS<span className="text-secondary">origins</span>
+            <span className="text-2xl font-display font-bold">
+              <span className="text-[hsl(0,0%,75%)]">GS</span><span className="text-secondary">origins</span>
             </span>
             <p className="text-sm text-muted-foreground mt-3 max-w-sm">
               Your origin point for Green Sustainable living — exploring Health, Technology,

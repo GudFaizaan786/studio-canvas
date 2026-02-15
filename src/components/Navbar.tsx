@@ -26,8 +26,8 @@ const Navbar = () => {
         className="fixed top-0 left-0 right-0 z-50 glass-card rounded-none border-x-0 border-t-0"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <a href="#home" className="text-2xl font-display font-bold text-foreground tracking-tight">
-            GS<span className="text-secondary">origins</span>
+          <a href="#home" className="text-2xl font-display font-bold tracking-tight">
+            <span className="text-[hsl(0,0%,75%)]">GS</span><span className="text-secondary">origins</span>
           </a>
 
           {/* Desktop nav */}
