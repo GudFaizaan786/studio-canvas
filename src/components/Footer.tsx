@@ -3,9 +3,9 @@ import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-card">
-      <div className="max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-24">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 md:px-12 lg:px-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="sm:col-span-2">
             <span className="text-2xl font-display font-bold">
               <span className="text-[hsl(0,0%,75%)]">GS</span><span className="text-secondary">origins</span>
             </span>
@@ -29,7 +29,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              {["Home", "About Us", "Downloads", "Resources", "Blog"].map((link) => (
+              {["Home", "About", "Downloads", "Resources", "Community", "UNDP", "Blog"].map((link) => (
                 <a
                   key={link}
                   href={`#${link.toLowerCase().replace(" ", "")}`}
