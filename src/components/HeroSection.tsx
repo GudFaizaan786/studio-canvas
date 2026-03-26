@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden"
+      className="relative min-h-screen flex items-center px-4 sm:px-6 md:px-12 lg:px-24 py-20 lg:py-28 pt-28 sm:pt-32 overflow-hidden"
     >
       {/* Abstract background */}
       <div className="absolute inset-0 -z-10">
@@ -29,7 +29,7 @@ const HeroSection = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
             Green Sustainable • Health • Technology • Motivation • Lifestyle
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
             Live{" "}
             <span className="text-gradient">Green & Sustainable</span>{" "}
             Every Day

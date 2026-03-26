@@ -58,7 +58,7 @@ const AboutSection = () => {
               health tips, green tech innovations, motivational content, and mindful lifestyle guides.
             </p>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {stats.map((stat) => (
                 <div key={stat.label} className="glass-card p-5 text-center">
                   <stat.icon className="w-6 h-6 text-secondary mx-auto mb-2" />
