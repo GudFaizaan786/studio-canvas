@@ -7,6 +7,8 @@ import ResourcesSection from "@/components/ResourcesSection";
 import CommunitySection from "@/components/CommunitySection";
 import UNDPSection from "@/components/UNDPSection";
 import BlogSection from "@/components/BlogSection";
+import JugaadXSection from "@/components/JugaadXSection";
+import DeploymentSection from "@/components/DeploymentSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -21,7 +23,9 @@ const Index = () => {
         <ResourcesSection />
         <CommunitySection />
         <UNDPSection />
+        <JugaadXSection />
         <BlogSection />
+        <DeploymentSection />
       </main>
       <Footer />
     </div>
