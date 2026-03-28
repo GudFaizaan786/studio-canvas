@@ -12,7 +12,9 @@ const navLinks = [
   { label: "Resources", href: "#resources" },
   { label: "Community", href: "#community" },
   { label: "UNDP", href: "#undp" },
+  { label: "JugaadX", href: "#jugaadx" },
   { label: "Blog", href: "#blog" },
+  { label: "Deploy", href: "#deploy" },
 ];
 
 const Navbar = () => {
