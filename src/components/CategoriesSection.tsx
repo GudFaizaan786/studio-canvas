@@ -1,73 +1,18 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Leaf, Cpu, Heart, Flame, Sparkles, FileText, Image as ImageIcon, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePosts } from "@/hooks/use-posts";
 
 type ContentType = "blog" | "infographic" | "video";
 type CategoryKey = "health" | "technology" | "motivation" | "lifestyle" | "sustainability";
 
-interface Item {
-  type: ContentType;
-  title: string;
-  excerpt: string;
-}
-
-const categories: { key: CategoryKey; label: string; icon: React.ElementType; color: string; items: Item[] }[] = [
-  {
-    key: "health",
-    label: "Health",
-    icon: Heart,
-    color: "text-rose-400",
-    items: [
-      { type: "blog", title: "Plant-Based Diets for a Greener You", excerpt: "How eating greener heals your body and the planet." },
-      { type: "infographic", title: "Air Quality & Your Lungs", excerpt: "Visual breakdown of pollutants and how to defend against them." },
-      { type: "video", title: "Forest Bathing 101", excerpt: "A 5-min guide to nature-based mental wellness." },
-    ],
-  },
-  {
-    key: "technology",
-    label: "Technology",
-    icon: Cpu,
-    color: "text-cyan-400",
-    items: [
-      { type: "blog", title: "Open-Source Solar Controllers", excerpt: "Building affordable solar tech with community code." },
-      { type: "infographic", title: "Carbon Cost of AI Models", excerpt: "What every prompt really costs the planet." },
-      { type: "video", title: "Inside a Sustainable Datacenter", excerpt: "Touring a 100% renewable-powered facility." },
-    ],
-  },
-  {
-    key: "motivation",
-    label: "Motivation",
-    icon: Flame,
-    color: "text-orange-400",
-    items: [
-      { type: "blog", title: "Why Small Eco-Habits Matter", excerpt: "The compounding power of daily green actions." },
-      { type: "infographic", title: "Climate Heroes You Should Know", excerpt: "Faces of the youth-led sustainability movement." },
-      { type: "video", title: "From Burnout to Eco-Activism", excerpt: "Finding purpose through planet-positive work." },
-    ],
-  },
-  {
-    key: "lifestyle",
-    label: "Lifestyle",
-    icon: Sparkles,
-    color: "text-purple-400",
-    items: [
-      { type: "blog", title: "Zero-Waste Kitchen Starter Kit", excerpt: "Simple swaps that cut household waste by 70%." },
-      { type: "infographic", title: "Slow Fashion vs Fast Fashion", excerpt: "Side-by-side environmental footprint comparison." },
-      { type: "video", title: "Tour: A Tiny Off-Grid Home", excerpt: "Living beautifully with less, powered by sun." },
-    ],
-  },
-  {
-    key: "sustainability",
-    label: "Sustainability",
-    icon: Leaf,
-    color: "text-secondary",
-    items: [
-      { type: "blog", title: "Circular Economy in 5 Minutes", excerpt: "The model replacing take-make-waste capitalism." },
-      { type: "infographic", title: "17 SDGs at a Glance", excerpt: "UN's Sustainable Development Goals visualized." },
-      { type: "video", title: "Regenerative Farming Explained", excerpt: "How soil can pull carbon from the sky." },
-    ],
-  },
+const categories: { key: CategoryKey; label: string; icon: React.ElementType; color: string }[] = [
+  { key: "health", label: "Health", icon: Heart, color: "text-rose-400" },
+  { key: "technology", label: "Technology", icon: Cpu, color: "text-cyan-400" },
+  { key: "motivation", label: "Motivation", icon: Flame, color: "text-orange-400" },
+  { key: "lifestyle", label: "Lifestyle", icon: Sparkles, color: "text-purple-400" },
+  { key: "sustainability", label: "Sustainability", icon: Leaf, color: "text-secondary" },
 ];
 
 const typeIcon = { blog: FileText, infographic: ImageIcon, video: Play };
@@ -76,9 +21,14 @@ const typeLabel = { blog: "Blog", infographic: "Infographic", video: "Video" };
 const CategoriesSection = () => {
   const [active, setActive] = useState<CategoryKey>("sustainability");
   const [filter, setFilter] = useState<ContentType | "all">("all");
+  const { posts, loading } = usePosts({ category: active });
+
+  const filtered = useMemo(
+    () => posts.filter((p) => ["blog", "infographic", "video"].includes(p.type) && (filter === "all" || p.type === filter)),
+    [posts, filter]
+  );
 
   const current = categories.find((c) => c.key === active)!;
-  const filtered = filter === "all" ? current.items : current.items.filter((i) => i.type === filter);
 
   return (
     <section id="categories" className="py-16 sm:py-24 px-4 sm:px-6 bg-card/30">
@@ -97,7 +47,6 @@ const CategoriesSection = () => {
           </p>
         </motion.div>
 
-        {/* Category tabs */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6">
           {categories.map((cat) => {
             const Icon = cat.icon;
@@ -119,7 +68,6 @@ const CategoriesSection = () => {
           })}
         </div>
 
-        {/* Type filters */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {(["all", "blog", "infographic", "video"] as const).map((t) => (
             <Button
@@ -134,7 +82,6 @@ const CategoriesSection = () => {
           ))}
         </div>
 
-        {/* Items grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active + filter}
@@ -144,26 +91,53 @@ const CategoriesSection = () => {
             transition={{ duration: 0.3 }}
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
-            {filtered.map((item, i) => {
-              const TIcon = typeIcon[item.type];
-              return (
-                <div key={i} className="glass-card p-5 sm:p-6 rounded-2xl hover:border-secondary/50 transition-all group">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className={`p-2 rounded-lg bg-secondary/10 ${current.color}`}>
-                      <TIcon size={16} />
+            {loading ? (
+              [1, 2, 3].map((i) => <div key={i} className="glass-card h-72 animate-pulse" />)
+            ) : filtered.length === 0 ? (
+              <div className="col-span-full glass-card p-10 text-center text-muted-foreground">
+                No content in this category yet.
+              </div>
+            ) : (
+              filtered.map((item) => {
+                const TIcon = typeIcon[item.type as ContentType] || FileText;
+                return (
+                  <a
+                    key={item.id}
+                    href={item.external_url || "#"}
+                    target={item.external_url ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="glass-card overflow-hidden rounded-2xl hover:border-secondary/50 transition-all group"
+                  >
+                    {item.image_url && (
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={item.image_url}
+                          alt={item.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-5 sm:p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className={`p-2 rounded-lg bg-secondary/10 ${current.color}`}>
+                          <TIcon size={16} />
+                        </div>
+                        <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                          {typeLabel[item.type as ContentType] || item.type}
+                        </span>
+                      </div>
+                      <h3 className="font-display font-semibold text-lg mb-2 group-hover:text-secondary transition-colors">
+                        {item.title}
+                      </h3>
+                      {item.excerpt && (
+                        <p className="text-sm text-muted-foreground line-clamp-3">{item.excerpt}</p>
+                      )}
                     </div>
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground">{typeLabel[item.type]}</span>
-                  </div>
-                  <h3 className="font-display font-semibold text-lg mb-2 group-hover:text-secondary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">{item.excerpt}</p>
-                  <Button size="sm" variant="ghost" className="px-0 h-auto text-secondary">
-                    Explore →
-                  </Button>
-                </div>
-              );
-            })}
+                  </a>
+                );
+              })
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
