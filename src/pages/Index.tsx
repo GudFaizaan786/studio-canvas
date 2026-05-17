@@ -9,6 +9,8 @@ import UNDPSection from "@/components/UNDPSection";
 import BlogSection from "@/components/BlogSection";
 import JugaadXSection from "@/components/JugaadXSection";
 import DeploymentSection from "@/components/DeploymentSection";
+import CategoriesSection from "@/components/CategoriesSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -19,6 +21,7 @@ const Index = () => {
         <HeroSection />
         <NatureVideoSection />
         <AboutSection />
+        <CategoriesSection />
         <DownloadsSection />
         <ResourcesSection />
         <CommunitySection />
@@ -26,6 +29,7 @@ const Index = () => {
         <JugaadXSection />
         <BlogSection />
         <DeploymentSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
