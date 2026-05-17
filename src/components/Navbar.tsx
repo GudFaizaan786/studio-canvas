@@ -8,13 +8,17 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Health", href: "#categories" },
+  { label: "Technology", href: "#categories" },
+  { label: "Motivation", href: "#categories" },
+  { label: "Lifestyle", href: "#categories" },
+  { label: "Sustainability", href: "#categories" },
   { label: "Downloads", href: "#downloads" },
   { label: "Resources", href: "#resources" },
   { label: "Community", href: "#community" },
   { label: "UNDP", href: "#undp" },
-  { label: "JugaadX", href: "#jugaadx" },
   { label: "Blog", href: "#blog" },
-  { label: "Deploy", href: "#deploy" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
