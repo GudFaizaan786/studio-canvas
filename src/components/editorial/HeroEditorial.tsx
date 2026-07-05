@@ -73,12 +73,12 @@ const HeroEditorial = () => {
           className="mt-10 flex flex-wrap gap-3"
         >
           <a href="#knowledge">
-            <Button size="lg" className="rounded-full h-13 px-7 gap-2 text-base">
+            <Button size="lg" className="rounded-full h-12 px-7 gap-2 text-base">
               Explore Knowledge <ArrowRight size={18} />
             </Button>
           </a>
           <a href="#systems">
-            <Button variant="outline" size="lg" className="rounded-full h-13 px-7 gap-2 text-base border-foreground/15">
+            <Button variant="outline" size="lg" className="rounded-full h-12 px-7 gap-2 text-base border-foreground/15">
               Start Learning System <ArrowUpRight size={18} />
             </Button>
           </a>
