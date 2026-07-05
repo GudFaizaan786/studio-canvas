@@ -1,37 +1,31 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import NatureVideoSection from "@/components/NatureVideoSection";
-import AboutSection from "@/components/AboutSection";
-import DownloadsSection from "@/components/DownloadsSection";
-import ResourcesSection from "@/components/ResourcesSection";
-import CommunitySection from "@/components/CommunitySection";
-import UNDPSection from "@/components/UNDPSection";
-import BlogSection from "@/components/BlogSection";
-import JugaadXSection from "@/components/JugaadXSection";
-import DeploymentSection from "@/components/DeploymentSection";
-import CategoriesSection from "@/components/CategoriesSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import EditorialNav from "@/components/editorial/EditorialNav";
+import HeroEditorial from "@/components/editorial/HeroEditorial";
+import PillarsSection from "@/components/editorial/PillarsSection";
+import DailySystems from "@/components/editorial/DailySystems";
+import KnowledgeCards from "@/components/editorial/KnowledgeCards";
+import FeaturedArticle from "@/components/editorial/FeaturedArticle";
+import FrameworksSection from "@/components/editorial/FrameworksSection";
+import StatsSection from "@/components/editorial/StatsSection";
+import CaseStudies from "@/components/editorial/CaseStudies";
+import NewsletterSection from "@/components/editorial/NewsletterSection";
+import FooterEditorial from "@/components/editorial/FooterEditorial";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <EditorialNav />
       <main>
-        <HeroSection />
-        <NatureVideoSection />
-        <AboutSection />
-        <CategoriesSection />
-        <DownloadsSection />
-        <ResourcesSection />
-        <CommunitySection />
-        <UNDPSection />
-        <JugaadXSection />
-        <BlogSection />
-        <DeploymentSection />
-        <ContactSection />
+        <HeroEditorial />
+        <PillarsSection />
+        <DailySystems />
+        <KnowledgeCards />
+        <FeaturedArticle />
+        <FrameworksSection />
+        <StatsSection />
+        <CaseStudies />
+        <NewsletterSection />
       </main>
-      <Footer />
+      <FooterEditorial />
     </div>
   );
 };
