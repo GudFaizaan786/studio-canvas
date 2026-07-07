@@ -30,8 +30,8 @@ const JugaadXSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-secondary/10 border border-secondary/25 text-secondary text-sm font-bold tracking-wide mb-5">
-            <span className="text-lg">⚡</span> INTRODUCING JUGAADX
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-[3px] bg-secondary/15 border border-secondary/40 text-secondary text-xs font-semibold tracking-wide uppercase mb-5">
+            <span className="text-base">⚡</span> Introducing JugaadX
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
             <span className="text-gradient">Turn Problems</span>{" "}
@@ -44,10 +44,11 @@ const JugaadXSection = () => {
             href="https://jugaadx.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-primary-foreground px-7 py-3.5 rounded-xl font-extrabold text-base tracking-wide hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground border-[1.5px] border-foreground/70 px-7 py-3 rounded-[3px] font-bold text-base tracking-wide shadow-[3px_4px_0_hsl(var(--foreground)/0.18)] hover:brightness-105 active:scale-[0.97] transition-all"
           >
             ⚡ Launch JugaadX
           </a>
+
         </motion.div>
 
         {/* Features grid */}
