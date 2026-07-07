@@ -8,10 +8,10 @@ type ContentType = "blog" | "infographic" | "video";
 type CategoryKey = "health" | "technology" | "motivation" | "lifestyle" | "sustainability";
 
 const categories: { key: CategoryKey; label: string; icon: React.ElementType; color: string }[] = [
-  { key: "health", label: "Health", icon: Heart, color: "text-rose-400" },
-  { key: "technology", label: "Technology", icon: Cpu, color: "text-cyan-400" },
-  { key: "motivation", label: "Motivation", icon: Flame, color: "text-orange-400" },
-  { key: "lifestyle", label: "Lifestyle", icon: Sparkles, color: "text-purple-400" },
+  { key: "health", label: "Health", icon: Heart, color: "text-primary" },
+  { key: "technology", label: "Technology", icon: Cpu, color: "text-secondary" },
+  { key: "motivation", label: "Motivation", icon: Flame, color: "text-primary" },
+  { key: "lifestyle", label: "Lifestyle", icon: Sparkles, color: "text-accent" },
   { key: "sustainability", label: "Sustainability", icon: Leaf, color: "text-secondary" },
 ];
 
