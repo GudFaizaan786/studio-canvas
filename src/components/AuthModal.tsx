@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { lovable } from "@/integrations/lovable";
 
 interface AuthModalProps {
   mode: "login" | "signup" | null;
@@ -32,14 +33,15 @@ const AuthModal = ({ mode, onClose, onSwitch }: AuthModalProps) => {
 
   const handleGoogle = async () => {
     setGoogleBusy(true);
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: window.location.origin },
+    const result = await lovable.auth.signInWithOAuth("google", {
+      redirect_uri: window.location.origin,
     });
-    if (error) {
-      toast.error(error.message);
+    if (result.error) {
+      toast.error(result.error.message ?? "Google sign-in failed");
       setGoogleBusy(false);
+      return;
     }
+    if (result.redirected) return;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
