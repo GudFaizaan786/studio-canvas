@@ -96,7 +96,7 @@ const UNDPSection = () => {
               <Globe className="text-[hsl(210,80%,45%)]" size={28} />
             </div>
             <div>
-              <span className="text-sm font-medium text-[hsl(210,80%,45%)] uppercase tracking-widest">
+              <span className="font-hand text-[hsl(210,80%,45%)] text-xl sm:text-2xl">
                 United Nations
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mt-1">

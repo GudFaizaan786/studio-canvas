@@ -25,7 +25,7 @@ const DeploymentSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-14"
         >
-          <span className="inline-block text-xs font-semibold text-secondary tracking-widest uppercase mb-3">
+          <span className="inline-block font-hand text-secondary text-xl sm:text-2xl mb-2">
             Deployment
           </span>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
