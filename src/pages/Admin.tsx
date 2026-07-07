@@ -130,7 +130,7 @@ const AdminPage = () => {
           <div className="flex items-center gap-4">
             <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft size={20} /></Link>
             <h1 className="text-xl font-display font-bold">
-              <span className="text-[hsl(0,0%,75%)]">GS</span>
+              <span className="text-[hsl(var(--silver))]">GS</span>
               <span className="text-secondary">origins</span> Admin
             </h1>
           </div>
