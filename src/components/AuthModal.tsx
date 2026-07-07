@@ -42,6 +42,10 @@ const AuthModal = ({ mode, onClose, onSwitch }: AuthModalProps) => {
       return;
     }
     if (result.redirected) return;
+    // Session set in-place (preview popup flow)
+    toast.success("Welcome to GSorigins.");
+    setGoogleBusy(false);
+    onClose();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
