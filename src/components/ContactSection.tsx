@@ -57,7 +57,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 glass-card p-6 sm:p-8 rounded-2xl space-y-5"
+            className="lg:col-span-2 glass-card p-6 sm:p-8 space-y-5"
           >
             <div className="flex items-start gap-3">
               <Mail className="text-secondary mt-1 shrink-0" size={20} />
@@ -87,7 +87,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="lg:col-span-3 glass-card p-6 sm:p-8 rounded-2xl space-y-4"
+            className="lg:col-span-3 glass-card p-6 sm:p-8 space-y-4"
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">

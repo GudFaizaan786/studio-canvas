@@ -163,7 +163,7 @@ const UNDPSection = () => {
               className="glass-card p-6 group cursor-pointer hover:scale-[1.01] transition-transform"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[hsl(210,80%,45%)]/10 text-[hsl(210,80%,45%)]">
+                <span className="text-xs font-semibold px-3 py-1 rounded-[3px] bg-[hsl(210,80%,45%)]/10 text-[hsl(210,80%,45%)]">
                   {post.sdgTag}
                 </span>
                 <span className="flex items-center gap-1 text-xs text-muted-foreground ml-auto">
