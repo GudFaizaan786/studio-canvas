@@ -96,7 +96,7 @@ const UNDPSection = () => {
               <Globe className="text-[hsl(210,80%,45%)]" size={28} />
             </div>
             <div>
-              <span className="text-sm font-medium text-[hsl(210,80%,45%)] uppercase tracking-widest">
+              <span className="font-hand text-[hsl(210,80%,45%)] text-xl sm:text-2xl">
                 United Nations
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mt-1">
@@ -163,7 +163,7 @@ const UNDPSection = () => {
               className="glass-card p-6 group cursor-pointer hover:scale-[1.01] transition-transform"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[hsl(210,80%,45%)]/10 text-[hsl(210,80%,45%)]">
+                <span className="text-xs font-semibold px-3 py-1 rounded-[3px] bg-[hsl(210,80%,45%)]/10 text-[hsl(210,80%,45%)]">
                   {post.sdgTag}
                 </span>
                 <span className="flex items-center gap-1 text-xs text-muted-foreground ml-auto">

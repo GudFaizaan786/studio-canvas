@@ -2,121 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 224 40% 6%;
-    --foreground: 220 20% 95%;
+    /* Paper / kraft light theme (default) */
+    --background: 40 54% 92%;      /* #F6EFE1 warm paper cream */
+    --foreground: 22 29% 18%;      /* #3C2B21 espresso */
 
-    --card: 224 35% 10%;
-    --card-foreground: 220 20% 95%;
+    --card: 38 52% 96%;            /* #FAF6EF card surface */
+    --card-foreground: 22 29% 18%;
 
-    --popover: 224 35% 10%;
-    --popover-foreground: 220 20% 95%;
+    --popover: 38 52% 96%;
+    --popover-foreground: 22 29% 18%;
 
-    --primary: 152 55% 28%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 18 50% 47%;         /* #B3603C rust CTA */
+    --primary-foreground: 40 54% 96%;
 
-    --secondary: 82 65% 45%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 87 18% 35%;       /* #5C6B4A moss green */
+    --secondary-foreground: 40 54% 96%;
 
-    --muted: 224 30% 16%;
-    --muted-foreground: 220 15% 60%;
+    --muted: 38 46% 86%;           /* #ECE0CB deeper kraft */
+    --muted-foreground: 26 23% 41%;/* #826651 warm muted */
 
-    --accent: 160 50% 42%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 81 18% 60%;          /* #9EAB85 light moss tint */
+    --accent-foreground: 22 29% 18%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 55% 42%;
+    --destructive-foreground: 40 54% 96%;
 
-    --border: 224 30% 18%;
-    --input: 224 30% 18%;
-    --ring: 152 55% 28%;
+    --border: 26 22% 74%;          /* hairline tan (reads as ink ~35%) */
+    --input: 26 22% 74%;
+    --ring: 87 18% 35%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 38 52% 96%;
+    --sidebar-foreground: 25 27% 28%;
+    --sidebar-primary: 18 50% 47%;
+    --sidebar-primary-foreground: 40 54% 96%;
+    --sidebar-accent: 38 46% 86%;
+    --sidebar-accent-foreground: 22 29% 18%;
+    --sidebar-border: 26 22% 74%;
+    --sidebar-ring: 87 18% 35%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(152 55% 28%), hsl(140 45% 38%), hsl(82 65% 45%));
-    --silver: 0 0% 75%;
-    --card-shadow: 0 4px 24px -4px hsl(152 55% 28% / 0.12);
-    --card-shadow-hover: 0 12px 40px -8px hsl(152 55% 28% / 0.22);
-    --glow-coral: 0 0 60px -12px hsl(82 65% 45% / 0.3);
+    /* Paper effects */
+    --silver: 26 23% 41%;
+    --hero-gradient: linear-gradient(120deg, hsl(87 18% 35%), hsl(18 50% 47%));
+    --paper-shadow: 3px 4px 0 hsl(22 29% 18% / 0.14);
+    --paper-shadow-hover: 4px 6px 0 hsl(22 29% 18% / 0.20);
+    --card-shadow: var(--paper-shadow);
+    --card-shadow-hover: var(--paper-shadow-hover);
   }
 
   .light {
-    --background: 220 20% 97%;
-    --foreground: 224 40% 12%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 40% 12%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 40% 12%;
-
-    --primary: 152 55% 28%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 82 65% 45%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 220 15% 92%;
-    --muted-foreground: 220 10% 46%;
-
-    --accent: 160 50% 42%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 152 55% 28%;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    --card-shadow: 0 4px 24px -4px hsl(152 55% 28% / 0.08);
-    --card-shadow-hover: 0 12px 40px -8px hsl(152 55% 28% / 0.16);
+    --background: 40 54% 92%;
+    --foreground: 22 29% 18%;
+    --card: 38 52% 96%;
+    --card-foreground: 22 29% 18%;
+    --popover: 38 52% 96%;
+    --popover-foreground: 22 29% 18%;
+    --primary: 18 50% 47%;
+    --primary-foreground: 40 54% 96%;
+    --secondary: 87 18% 35%;
+    --secondary-foreground: 40 54% 96%;
+    --muted: 38 46% 86%;
+    --muted-foreground: 26 23% 41%;
+    --accent: 81 18% 60%;
+    --accent-foreground: 22 29% 18%;
+    --destructive: 0 55% 42%;
+    --destructive-foreground: 40 54% 96%;
+    --border: 26 22% 74%;
+    --input: 26 22% 74%;
+    --ring: 87 18% 35%;
+    --card-shadow: var(--paper-shadow);
+    --card-shadow-hover: var(--paper-shadow-hover);
   }
 
   .dark {
-    /* dark is already the :root default, this class ensures it applies when toggled */
-    --background: 224 40% 6%;
-    --foreground: 220 20% 95%;
-    --card: 224 35% 10%;
-    --card-foreground: 220 20% 95%;
-    --popover: 224 35% 10%;
-    --popover-foreground: 220 20% 95%;
-    --primary: 152 55% 28%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 82 65% 45%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 224 30% 16%;
-    --muted-foreground: 220 15% 60%;
-    --accent: 180 50% 42%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 224 30% 18%;
-    --input: 224 30% 18%;
-    --ring: 82 65% 45%;
-    --card-shadow: 0 4px 24px -4px hsl(152 55% 28% / 0.12);
-    --card-shadow-hover: 0 12px 40px -8px hsl(152 55% 28% / 0.22);
+    /* Dark kraft — warm, not neon */
+    --background: 25 18% 11%;
+    --foreground: 40 40% 90%;
+    --card: 25 16% 15%;
+    --card-foreground: 40 40% 90%;
+    --popover: 25 16% 15%;
+    --popover-foreground: 40 40% 90%;
+    --primary: 18 55% 52%;
+    --primary-foreground: 25 18% 11%;
+    --secondary: 87 20% 55%;
+    --secondary-foreground: 25 18% 11%;
+    --muted: 25 14% 20%;
+    --muted-foreground: 38 24% 66%;
+    --accent: 81 18% 55%;
+    --accent-foreground: 25 18% 11%;
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 40 40% 92%;
+    --border: 30 12% 30%;
+    --input: 30 12% 30%;
+    --ring: 87 20% 55%;
+    --hero-gradient: linear-gradient(120deg, hsl(87 20% 55%), hsl(18 55% 52%));
+    --paper-shadow: 3px 4px 0 hsl(0 0% 0% / 0.35);
+    --paper-shadow-hover: 4px 6px 0 hsl(0 0% 0% / 0.45);
+    --card-shadow: var(--paper-shadow);
+    --card-shadow-hover: var(--paper-shadow-hover);
   }
 }
 
@@ -127,6 +115,29 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    position: relative;
+  }
+
+  /* Fibrous paper grain overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  }
+
+  .dark body::before {
+    mix-blend-mode: screen;
+    opacity: 0.4;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -140,16 +151,36 @@
     background-image: var(--hero-gradient);
   }
 
+  .font-hand {
+    font-family: 'Caveat', cursive;
+  }
+
+  .kicker {
+    @apply font-hand text-secondary text-xl sm:text-2xl leading-none;
+  }
+
   .section-padding {
     @apply px-6 py-20 md:px-12 lg:px-24 lg:py-28;
   }
 
+  /* Flat paper card — replaces old glassmorphism */
   .glass-card {
-    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl;
-    box-shadow: var(--card-shadow);
+    @apply bg-card border border-border;
+    border-radius: 4px !important;
+    box-shadow: var(--paper-shadow);
+    backdrop-filter: none;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
   }
 
   .glass-card:hover {
-    box-shadow: var(--card-shadow-hover);
+    box-shadow: var(--paper-shadow-hover);
+  }
+
+  .paper-lift {
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .paper-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--paper-shadow-hover);
   }
 }

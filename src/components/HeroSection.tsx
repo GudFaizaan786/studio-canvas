@@ -26,8 +26,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
-            Green Sustainable • Health • Technology • Motivation • Lifestyle
+          <span className="inline-block font-hand text-secondary text-xl sm:text-2xl mb-3">
+            Green · Sustainable · Health · Technology · Motivation · Lifestyle
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
             Live{" "}
@@ -40,10 +40,10 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="gap-2">
-              Explore Now <ArrowRight size={18} />
+              Start Growing <ArrowRight size={18} />
             </Button>
             <Button variant="outline" size="lg">
-              Our Mission
+              Read Our Story
             </Button>
           </div>
         </motion.div>

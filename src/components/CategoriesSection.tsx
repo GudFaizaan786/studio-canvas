@@ -8,10 +8,10 @@ type ContentType = "blog" | "infographic" | "video";
 type CategoryKey = "health" | "technology" | "motivation" | "lifestyle" | "sustainability";
 
 const categories: { key: CategoryKey; label: string; icon: React.ElementType; color: string }[] = [
-  { key: "health", label: "Health", icon: Heart, color: "text-rose-400" },
-  { key: "technology", label: "Technology", icon: Cpu, color: "text-cyan-400" },
-  { key: "motivation", label: "Motivation", icon: Flame, color: "text-orange-400" },
-  { key: "lifestyle", label: "Lifestyle", icon: Sparkles, color: "text-purple-400" },
+  { key: "health", label: "Health", icon: Heart, color: "text-primary" },
+  { key: "technology", label: "Technology", icon: Cpu, color: "text-secondary" },
+  { key: "motivation", label: "Motivation", icon: Flame, color: "text-primary" },
+  { key: "lifestyle", label: "Lifestyle", icon: Sparkles, color: "text-accent" },
   { key: "sustainability", label: "Sustainability", icon: Leaf, color: "text-secondary" },
 ];
 
@@ -55,7 +55,7 @@ const CategoriesSection = () => {
               <button
                 key={cat.key}
                 onClick={() => { setActive(cat.key); setFilter("all"); }}
-                className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium border transition-all ${
+                className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-[3px] text-xs sm:text-sm font-medium border transition-all ${
                   isActive
                     ? "bg-secondary text-secondary-foreground border-secondary"
                     : "border-border text-muted-foreground hover:text-foreground hover:border-secondary/50"
@@ -106,7 +106,7 @@ const CategoriesSection = () => {
                     href={item.external_url || "#"}
                     target={item.external_url ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="glass-card overflow-hidden rounded-2xl hover:border-secondary/50 transition-all group"
+                    className="glass-card overflow-hidden hover:border-secondary/50 transition-all group"
                   >
                     {item.image_url && (
                       <div className="aspect-video overflow-hidden">

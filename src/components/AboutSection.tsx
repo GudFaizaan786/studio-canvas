@@ -20,7 +20,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-secondary uppercase tracking-widest">
+          <span className="font-hand text-secondary text-xl sm:text-2xl">
             About GSorigins
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">

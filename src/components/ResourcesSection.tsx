@@ -24,7 +24,7 @@ const ResourcesSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="text-sm font-medium text-secondary uppercase tracking-widest">
+          <span className="font-hand text-secondary text-xl sm:text-2xl">
             Resources
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3">Sustainable Knowledge Hub</h2>
