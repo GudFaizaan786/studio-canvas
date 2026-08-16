@@ -41,7 +41,13 @@ function Particles({ count, radius }: { count: number; radius: number }) {
   return (
     <points ref={ref}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
+        />
       </bufferGeometry>
       <pointsMaterial
         size={0.035}

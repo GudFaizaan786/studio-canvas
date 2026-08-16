@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Props = ComponentProps<"a"> & {
+type Props = Omit<ComponentProps<typeof motion.a>, "ref"> & {
   variant?: "primary" | "ghost";
   withArrow?: boolean;
 };
@@ -41,7 +41,7 @@ export const MagneticLink = ({
           : "border border-border bg-card/60 text-foreground hover:border-primary/50 hover:text-primary",
         className,
       )}
-      {...(rest as ComponentProps<typeof motion.a>)}
+      {...rest}
     >
       {children}
       {withArrow && (
