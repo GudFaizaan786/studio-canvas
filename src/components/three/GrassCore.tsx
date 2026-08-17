@@ -1,5 +1,5 @@
 import { Suspense, useMemo, useRef } from "react";
-import { Canvas, useFrame, type ThreeElements } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Icosahedron, Torus } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -19,7 +19,7 @@ const CYAN = "#28d3e8";
 function Particles({ count, radius }: { count: number; radius: number }) {
   const ref = useRef<THREE.Points>(null);
 
-  const positions = useMemo(() => {
+  const geometry = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const r = radius * (0.75 + Math.random() * 0.65);
@@ -29,7 +29,9 @@ function Particles({ count, radius }: { count: number; radius: number }) {
       arr[i * 3 + 1] = r * Math.cos(phi) * 0.75;
       arr[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
     }
-    return arr;
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(arr, 3));
+    return geo;
   }, [count, radius]);
 
   useFrame((state, delta) => {
@@ -39,16 +41,8 @@ function Particles({ count, radius }: { count: number; radius: number }) {
   });
 
   return (
-    <points ref={ref}>
-      <bufferGeometry>
-        {/* eslint-disable-next-line react/no-unknown-property */}
-        <bufferAttribute
-          attach="attributes-position"
-          count={positions.length / 3}
-          array={positions}
-          itemSize={3}
-        />
-      </bufferGeometry>
+    <points ref={ref} geometry={geometry}>
+
       <pointsMaterial
         size={0.035}
         color={GREEN}
@@ -80,10 +74,10 @@ function CoreObject({ lowPower, scale = 1 }: { lowPower: boolean; scale?: number
     }
   });
 
-  const ringProps: ThreeElements["mesh"][] = [
-    { rotation: [Math.PI / 2.2, 0, 0] },
-    { rotation: [Math.PI / 1.7, Math.PI / 3, 0] },
-    { rotation: [Math.PI / 2.8, -Math.PI / 2.4, 0] },
+  const ringRotations: [number, number, number][] = [
+    [Math.PI / 2.2, 0, 0],
+    [Math.PI / 1.7, Math.PI / 3, 0],
+    [Math.PI / 2.8, -Math.PI / 2.4, 0],
   ];
 
   return (
@@ -111,8 +105,8 @@ function CoreObject({ lowPower, scale = 1 }: { lowPower: boolean; scale?: number
       </Icosahedron>
 
       {/* circular data rings */}
-      {ringProps.map((p, i) => (
-        <Torus key={i} args={[2.5 + i * 0.28, 0.008, 8, 96]} {...p}>
+      {ringRotations.map((rotation, i) => (
+        <Torus key={i} args={[2.5 + i * 0.28, 0.008, 8, 96]} rotation={rotation}>
           <meshBasicMaterial color={i === 1 ? CYAN : GREEN} transparent opacity={0.5} />
         </Torus>
       ))}
