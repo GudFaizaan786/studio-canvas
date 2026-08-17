@@ -1,9 +1,10 @@
-import { useRef, useState, type ComponentProps } from "react";
+import { useRef, useState, type ComponentProps, type ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Props = Omit<ComponentProps<typeof motion.a>, "ref"> & {
+type Props = Omit<ComponentProps<typeof motion.a>, "ref" | "children"> & {
+  children?: ReactNode;
   variant?: "primary" | "ghost";
   withArrow?: boolean;
 };

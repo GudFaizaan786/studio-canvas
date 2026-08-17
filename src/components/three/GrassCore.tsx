@@ -19,7 +19,7 @@ const CYAN = "#28d3e8";
 function Particles({ count, radius }: { count: number; radius: number }) {
   const ref = useRef<THREE.Points>(null);
 
-  const positions = useMemo(() => {
+  const geometry = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const r = radius * (0.75 + Math.random() * 0.65);
@@ -29,7 +29,9 @@ function Particles({ count, radius }: { count: number; radius: number }) {
       arr[i * 3 + 1] = r * Math.cos(phi) * 0.75;
       arr[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
     }
-    return arr;
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(arr, 3));
+    return geo;
   }, [count, radius]);
 
   useFrame((state, delta) => {
@@ -39,16 +41,8 @@ function Particles({ count, radius }: { count: number; radius: number }) {
   });
 
   return (
-    <points ref={ref}>
-      <bufferGeometry>
-        {/* eslint-disable-next-line react/no-unknown-property */}
-        <bufferAttribute
-          attach="attributes-position"
-          count={positions.length / 3}
-          array={positions}
-          itemSize={3}
-        />
-      </bufferGeometry>
+    <points ref={ref} geometry={geometry}>
+
       <pointsMaterial
         size={0.035}
         color={GREEN}
