@@ -1,5 +1,5 @@
 import { Suspense, useMemo, useRef } from "react";
-import { Canvas, useFrame, type ThreeElements } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Icosahedron, Torus } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -74,10 +74,10 @@ function CoreObject({ lowPower, scale = 1 }: { lowPower: boolean; scale?: number
     }
   });
 
-  const ringProps: ThreeElements["mesh"][] = [
-    { rotation: [Math.PI / 2.2, 0, 0] },
-    { rotation: [Math.PI / 1.7, Math.PI / 3, 0] },
-    { rotation: [Math.PI / 2.8, -Math.PI / 2.4, 0] },
+  const ringRotations: [number, number, number][] = [
+    [Math.PI / 2.2, 0, 0],
+    [Math.PI / 1.7, Math.PI / 3, 0],
+    [Math.PI / 2.8, -Math.PI / 2.4, 0],
   ];
 
   return (
@@ -105,8 +105,8 @@ function CoreObject({ lowPower, scale = 1 }: { lowPower: boolean; scale?: number
       </Icosahedron>
 
       {/* circular data rings */}
-      {ringProps.map((p, i) => (
-        <Torus key={i} args={[2.5 + i * 0.28, 0.008, 8, 96]} {...p}>
+      {ringRotations.map((rotation, i) => (
+        <Torus key={i} args={[2.5 + i * 0.28, 0.008, 8, 96]} rotation={rotation}>
           <meshBasicMaterial color={i === 1 ? CYAN : GREEN} transparent opacity={0.5} />
         </Torus>
       ))}
